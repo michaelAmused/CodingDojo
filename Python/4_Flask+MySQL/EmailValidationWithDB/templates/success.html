@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Success Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+  </head>
+  <body>
+    <div class="success">
+      <p>The email address you entered ({{ session['email'] }}) is a VALID email address! Thank you!</p>
+    </div>
+    <table>
+      <thead>
+        <th>Email Addresses Entered:</th>
+      </thead>
+      <tbody>
+      {% for address in addresses %}
+        <tr>
+          <td>{{address['email']}}</td>
+          <td>{{address['created_at']}}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+  </body>
+</html>

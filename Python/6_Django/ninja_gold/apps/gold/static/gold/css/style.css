@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Tahoma, sans-serif;
+}
+
+.wrapper {
+  width: 930px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.total {
+  margin-bottom: 20px;
+}
+
+  .total p {
+    display: inline-block;
+    line-height: 20px;
+  }
+
+  .total p:last-child {
+    width: 135px;
+    border: 1px solid black;
+    padding-left: 8px;
+  }
+
+.bldg {
+  width: 200px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  display: inline-block;
+  text-align: center;
+}
+
+  .bldg p, .bldg h3 {
+    margin: 15px 0px;
+  }
+
+.active {
+  width: 872px;
+  height: 100px;
+  padding: 8px;
+  border: 1px solid black;
+  overflow-y: scroll;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}

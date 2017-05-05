@@ -1,0 +1,6 @@
+SELECT * FROM cities;
+
+SELECT countries.name, COUNT(cities.name)
+FROM countries
+JOIN cities ON countries.id=cities.country_id
+GROUP BY cities.name;

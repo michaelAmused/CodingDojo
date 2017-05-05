@@ -1,0 +1,77 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: monospace;
+}
+
+.wrapper {
+    width: 500px;
+    height: 500px;
+    margin: 50px auto;
+}
+
+h2, p, input {
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+input[type="submit"], input[type="text"] {
+    display: block;
+    height: 20px;
+}
+
+input[type="text"] {
+    width: 75px;
+    height: 20px;
+    border: 1px solid black;
+    margin: 30px auto 8px auto;
+}
+
+input[type="submit"] {
+    border: 1px solid black;
+    box-shadow: 2px 2px black;
+    background-color: white;
+    color: black;
+    margin: 20px auto;
+    padding: 0px 8px;
+    height: 20px;
+}
+
+div.message {
+    margin: 20px auto 0px auto;
+    background-color: red;
+    color: white;
+    font-size: 0.8em;
+    width: 250px;
+    border: 1px solid black;
+
+}
+
+
+div.winner {
+    margin: 20px auto 0px auto;
+    background-color: green;
+    color: white;
+    width: 200px;
+    border: 1px solid black;
+}
+
+    .message p {
+        line-height: 185px;
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    .winner p {
+        margin-top: 40px;
+        text-align: center;
+        font-size: 1.5em;
+        word-wrap: break-word;
+    }

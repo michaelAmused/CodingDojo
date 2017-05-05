@@ -1,0 +1,59 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  font-family: monospace;
+}
+
+.flash {
+  margin: 20px auto 0px auto;
+  background-color: red;
+  color: white;
+  font-size: 1.8em;
+  border: 1px solid black;
+  text-align: center;
+
+}
+
+.inner {
+  display: inline-block;
+  vertical-align: top;
+  height: 20px;
+}
+
+input[type="text"]{
+  width: 200px;
+  height: 20px;
+  border: 1px solid black;
+  margin: 30px auto 8px auto;
+}
+
+input[type="submit"] {
+  border: 1px solid black;
+  box-shadow: 2px 2px black;
+  background-color: white;
+  color: black;
+  margin: 20px auto;
+  padding: 0px 8px;
+  height: 20px;
+}
+
+.success {
+  display: inline-block;
+  margin: 20px auto 0px auto;
+  background-color: ;
+  color: black;
+  font-size: 1.8em;
+  width: 250px;
+  border: 1px solid black;
+}
+
+th {
+  text-decoration: underline;
+  font-size: 1.8em;
+}
+
+tr {
+  font-size: 1.2em;
+}

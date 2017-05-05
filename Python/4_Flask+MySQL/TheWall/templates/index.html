@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Coding Dojo Wall</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="page_wrapper">
+            <div class="header">
+                <div class="nav">
+                    <h2 class="col1">Coding Dojo Wall</h2>
+                    <p class="col2">Welcome {{ session['user']['first_name'] }} {{ session['user']['last_name'] }}</p>
+                    <p class="col3"><a href="/logout">log off</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="post_new_message">
+                <h3>Post a message</h3>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    <div class="alert">
+                        {% for message in messages %}
+                            <p>{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                {% endwith %}
+                <textarea name="message" form="add_message"></textarea>
+                <form id="add_message" action="/messages" method="POST">
+                    <input class="btn add_message" type="submit" value="Post a message">
+                </form>
+            </div>
+            <div class="all_messages">
+                {% if messages %}
+                    {% for message in messages %}
+                        {% with post_id = message['id'] %}
+                            {% if session['user']['id'] == message['user_id'] and message['time_diff'] <= 1800 %}
+                            <p class="user">{{ message['user'] }} - {{ message['created_at'] }} <a href="/messages/{{ post_id }}/delete">delete</a></p>
+                            {% else %}
+                            <p class="user">{{ message['user'] }} - {{ message['created_at'] }}</p>
+                            {% endif %}
+                            <p class="message">{{ message['message'] }}</p>
+                            <div class="comments">
+                                {% if comments %}
+                                    {% for comment in comments %}
+                                        {% if comment['id'] == post_id %}
+                                        <p class="user">{{ comment['user'] }} - {{ comment['created_at'] }}</p>
+                                        <p>{{ comment['comment']}}</p>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                                <p>Post a comment</p>
+                                <textarea name="comment" form="comment_for_post_{{ post_id }}"></textarea>
+                                <form id="comment_for_post_{{ post_id }}" action="/comments" method="POST">
+                                    <input type="hidden" name="message_id" value="{{ post_id }}">
+                                    <input class="btn add_comment" type="submit" value="Post a comment">
+                                </form>
+                            </div>
+                        {% endwith %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>

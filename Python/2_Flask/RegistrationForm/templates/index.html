@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="../static/style.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <h2>Registration Form</h2>
+
+      {% with empty_error = get_flashed_messages(category_filter=['empty']) %}
+        {% if empty_error %}
+          {% for error in empty_error %}
+            <p class="empty">{{ error }}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      {% with invalid_error = get_flashed_messages(category_filter=['invalid']) %}
+        {% if invalid_error %}
+          {% for error in invalid_error %}
+            <p class="invalid">{{ error }}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      <form action="/process" method="post">
+        <label for="email">Email</label>
+        <input type="text" name="email">
+        <label for="first_name">First Name</label>
+        <input type="text" name="first_name">
+        <label for="last_name">Last Name</label>
+        <input type="text" name="last_name">
+        <label for="password">Create Password</label>
+        <input type="password" name="password">
+        <label for="confirm_password">Confirm Password</label>
+        <input type="password" name="confirm_password">
+        <label for="birth_date">Birth Date</label>
+        <input type="text" name="birth_date" placeholder="MM/DD/YYYY">
+        <input type="submit" name="submit" value="SUBMIT">
+      </form>
+
+    </div>
+  </body>
+</html>

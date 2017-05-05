@@ -1,0 +1,49 @@
+Last login: Thu May  4 14:13:47 on ttys000
+Michaels-MacBook-Pro:~ michaelobrien$ ls
+Applications			Downloads			Pictures
+Applications (Parallels)	Library				Public
+Calibre Library			MichaelOBrien			RoR
+Creative Cloud Files		Movies				RoR.zip
+Desktop				Music				RoRbII
+Documents			OneDrive			main
+DojoSecrets			Parallels			main.zip
+Michaels-MacBook-Pro:~ michaelobrien$ cd Desktop/
+Michaels-MacBook-Pro:Desktop michaelobrien$ mkdir tesst
+Michaels-MacBook-Pro:Desktop michaelobrien$ cd test
+-bash: cd: test: No such file or directory
+Michaels-MacBook-Pro:Desktop michaelobrien$ rmdir tesst
+Michaels-MacBook-Pro:Desktop michaelobrien$ mkdir test
+Michaels-MacBook-Pro:Desktop michaelobrien$ cd test
+Michaels-MacBook-Pro:test michaelobrien$ touch index.html, styles.css, commands.txt
+Michaels-MacBook-Pro:test michaelobrien$ ls
+commands.txt	index.html,	styles.css,
+Michaels-MacBook-Pro:test michaelobrien$ mv index.html, index.html
+Michaels-MacBook-Pro:test michaelobrien$ mv styles.css, styles.css
+Michaels-MacBook-Pro:test michaelobrien$ ls
+commands.txt	index.html	styles.css
+Michaels-MacBook-Pro:test michaelobrien$ cd ..
+Michaels-MacBook-Pro:Desktop michaelobrien$ cd test/
+Michaels-MacBook-Pro:test michaelobrien$ cp index.html index_2.html
+Michaels-MacBook-Pro:test michaelobrien$ ls
+commands.txt	index.html	index_2.html	styles.css
+Michaels-MacBook-Pro:test michaelobrien$ rm -rf styles.css
+Michaels-MacBook-Pro:test michaelobrien$ ls
+commands.txt	index.html	index_2.html
+Michaels-MacBook-Pro:test michaelobrien$ cd ..
+Michaels-MacBook-Pro:Desktop michaelobrien$ mkdir destination
+Michaels-MacBook-Pro:Desktop michaelobrien$ mv test/index_2.html destination/index_2.html
+Michaels-MacBook-Pro:Desktop michaelobrien$ ls
+$RECYCLE.BIN		Inbox			New Software		Quicken			destination
+Belt Exam Results.pdf	JobPrep			New Statements		Thumbs.db		test
+Michaels-MacBook-Pro:Desktop michaelobrien$ cd test
+Michaels-MacBook-Pro:test michaelobrien$ ls
+commands.txt	index.html
+Michaels-MacBook-Pro:test michaelobrien$ cd ../destination
+Michaels-MacBook-Pro:destination michaelobrien$ ls
+index_2.html
+Michaels-MacBook-Pro:destination michaelobrien$ cd ..
+Michaels-MacBook-Pro:Desktop michaelobrien$ rm -rf destination/
+Michaels-MacBook-Pro:Desktop michaelobrien$ ls
+$RECYCLE.BIN		Inbox			New Software		Quicken			test
+Belt Exam Results.pdf	JobPrep			New Statements		Thumbs.db
+Michaels-MacBook-Pro:Desktop michaelobrien$

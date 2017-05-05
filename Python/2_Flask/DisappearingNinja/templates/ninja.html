@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ninjas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+  </head>
+  <body>
+    {% if not ninja_color %}
+      <img src="{{ url_for('static', filename='images/donatello.jpg')}}" alt="Donatello">
+      <img src="{{ url_for('static', filename='images/leonardo.jpg')}}" alt="Leonardo">
+      <img src="{{ url_for('static', filename='images/michelangelo.jpg')}}" alt="Michelangelo">
+      <img src="{{ url_for('static', filename='images/raphael.jpg')}}" alt="Raphael">
+    {% elif ninja_color == 'blue' %}
+      <img src="{{ url_for('static', filename='images/leonardo.jpg')}}" alt="Leonardo">
+    {% elif ninja_color == 'orange' %}
+      <img src="{{ url_for('static', filename='images/michelangelo.jpg')}}" alt="Michelangelo">
+    {% elif ninja_color == 'red' %}
+      <img src="{{ url_for('static', filename='images/raphael.jpg')}}" alt="Raphael">
+    {% elif ninja_color == 'purple' %}
+      <img src="{{ url_for('static', filename='images/donatello.jpg')}}" alt="Donatello">
+    {% else %}
+      <img src="{{ url_for('static', filename='images/notapril.jpg')}}" alt="Megan Fox">
+    {% endif %}
+
+  </body>
+</html>

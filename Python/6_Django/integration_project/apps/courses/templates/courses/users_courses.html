@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Users Courses</title>
+    </head>
+    <body>
+        <a href="{% url 'log_reg:index' %}">logout</a>
+        <div class="message">
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="select">
+            <form action="{% url 'courses:users_courses' %}" method="post">
+                {% csrf_token %}
+                <select name="user">
+                    {% if users %}
+                        {% for user in users %}
+                            <option value="{{user.id}}">{{user.first_name}} {{user.last_name}}</option>
+                        {% endfor %}
+                    {% endif %}
+                </select>
+                <select name="course">
+                    {% if courses %}
+                        {% for course in courses %}
+                            <option value="{{course.id}}">{{course.name}}</option>
+                        {% endfor %}
+                    {% endif %}
+                </select>
+                <input type="submit" value="Add User To Course">
+            </form>
+        </div>
+        <div class="tabs">
+            <table>
+                <thead>
+                    <tr>
+                        <td>Course</td>
+                        <td>Course Name</td>
+                        <td>Number of Users</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for course in courses %}
+                        <tr>
+                            <td>{{course.id}}</td>
+                            <td>{{course.name}}</td>
+                            <td>{{course.num_users}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                <a href="{% url 'courses:index' %}">Back to courses</a>
+            </table>
+
+
+        </div>
+
+    </body>
+</html>

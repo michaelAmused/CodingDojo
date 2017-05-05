@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <title>Pokemon API Demo</title>
+    <script>
+        $(document).ready(function(){
+            // console.log('jquery ready!');
+            $('form').submit(function(event){
+                event.preventDefault();
+                
+                // console.log('click action');
+                // var rando = Math.floor(Math.random() * 151) + 1;
+                var pokemon_id = $('#pokemon_id').val();
+                $.ajax({
+                    method: 'get',
+                    url: 'http://pokeapi.co/api/v2/pokemon/'+pokemon_id,
+                    success: function(response){
+                        console.log(response);
+                        //target the tbody and append a tr
+                        // build the tr with the pokemon info in td tags
+                        var html_str = '<tr>';
+                            html_str += '<td>'+response.id+'</td>';
+                            html_str += '<td>'+response.name+'</td>';
+                            html_str += '<td>'+response.weight+'</td>';
+                        var abilities_str = '<td>';
+                        for (var i = 0; i < response.abilities.length; i++){
+                            abilities_str += response.abilities[i].ability.name + ', ';
+                        }
+                            abilities_str += '</td>';
+                            html_str += abilities_str;
+                            html_str += '<td><img src="'+response.sprites.front_default+'"></td>';
+                            html_str += '</tr>';
+                            console.log(html_str);
+                            $('tbody').append(html_str);
+                            $('#pokemon_id').val('');
+
+                    },
+                    dataType: 'json'
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <form>
+        <input id="pokemon_id" type="number" min="1" max="151">
+        <button type="submit">Click Me To Get A Specific Pokemon!</button>
+    </form>
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Weight</th>
+            <th>Abilities</th>
+            <th>Sprite</th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+</html>

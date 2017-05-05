@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ninjas</title>
+        {% load staticfiles %}
+    </head>
+    <body>
+        {% for pic in pics %}
+            <img src="{% static 'ninjas/images/' %}{{pic}}" alt="">
+        {% endfor %}
+    </body>
+</html>

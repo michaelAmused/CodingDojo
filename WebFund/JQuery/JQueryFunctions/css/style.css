@@ -1,0 +1,17 @@
+*{
+  margin: 10px;
+  padding: 0px;
+}
+div {
+  height: 100px;
+  border-bottom: 1px solid black
+}
+h1 {
+  font-family: Ariel, sans-serif;
+  font-size: 1.5em;
+  color: black;
+}
+p {
+  display: inline-block;
+  vertical-align: top:
+}

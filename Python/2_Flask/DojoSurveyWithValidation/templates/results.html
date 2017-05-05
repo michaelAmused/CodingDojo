@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Results</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+  </head>
+<body>
+  <div class="wrapper">
+    <div class="result">
+      <h3 class="underline">Submitted Info</h3>
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      {% for message in messages %}
+      <p class="error"> * {{ message }}</p>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+      <p>Name:</p><p class="user_submitted">{{name}}</p>
+      <p>Dojo Location:</p><p class="user_submitted">{{dojo}}</p>
+      <p>Favorite Language:</p><p class="user_submitted">{{language}}</p>
+      <p class="comment">Comment:</p><p class="user_submitted">{{comment}}</p>
+      <a href="/" class="button">Go Back</a>
+    </div>
+  </div>
+</body>
+</html>

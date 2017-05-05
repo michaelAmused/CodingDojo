@@ -1,0 +1,69 @@
+Michaels-MacBook-Pro:Desktop michaelobrien$ clear
+Michaels-MacBook-Pro:Desktop michaelobrien$ mkdir DojoAssignments
+Michaels-MacBook-Pro:Desktop michaelobrien$ cd DojoAssignments/
+Michaels-MacBook-Pro:DojoAssignments michaelobrien$ mkdir WebFundamentals
+Michaels-MacBook-Pro:DojoAssignments michaelobrien$ mkdir Python MEAN Ruby iOS netCore
+Michaels-MacBook-Pro:DojoAssignments michaelobrien$ ls
+MEAN		Python		Ruby		WebFundamentals	iOS		netCore
+Michaels-MacBook-Pro:DojoAssignments michaelobrien$ touch about.txt
+Michaels-MacBook-Pro:DojoAssignments michaelobrien$ cp about.txt MEAN
+Michaels-MacBook-Pro:DojoAssignments michaelobrien$ cp about.txt Python
+Michaels-MacBook-Pro:DojoAssignments michaelobrien$ cp about.txt Ruby
+Michaels-MacBook-Pro:DojoAssignments michaelobrien$ cp about.txt WebFundamentals/
+Michaels-MacBook-Pro:DojoAssignments michaelobrien$ cp about.txt iOS
+Michaels-MacBook-Pro:DojoAssignments michaelobrien$ cp about.txt netCore
+Michaels-MacBook-Pro:DojoAssignments michaelobrien$ rm about.txt
+Michaels-MacBook-Pro:DojoAssignments michaelobrien$ ls
+MEAN		Python		Ruby		WebFundamentals	iOS		netCore
+Michaels-MacBook-Pro:DojoAssignments michaelobrien$ cd MEAN/
+Michaels-MacBook-Pro:MEAN michaelobrien$ ls
+about.txt
+Michaels-MacBook-Pro:MEAN michaelobrien$ cd ..
+Michaels-MacBook-Pro:DojoAssignments michaelobrien$ cd WebFundamentals/
+Michaels-MacBook-Pro:WebFundamentals michaelobrien$ mkdir Git HTML CSS Javascript
+Michaels-MacBook-Pro:WebFundamentals michaelobrien$ ls
+CSS		Git		HTML		Javascript	about.txt
+Michaels-MacBook-Pro:WebFundamentals michaelobrien$ cp about.txt CSS
+Michaels-MacBook-Pro:WebFundamentals michaelobrien$ cp about.txt Git
+Michaels-MacBook-Pro:WebFundamentals michaelobrien$ cp about.txt HTML
+Michaels-MacBook-Pro:WebFundamentals michaelobrien$ cp about.txt Javascript/
+Michaels-MacBook-Pro:WebFundamentals michaelobrien$
+Michaels-MacBook-Pro:WebFundamentals michaelobrien$ cd HTML/
+Michaels-MacBook-Pro:HTML michaelobrien$ touch indentation.html
+Michaels-MacBook-Pro:HTML michaelobrien$ ls
+about.txt		indentation.html
+Michaels-MacBook-Pro:HTML michaelobrien$ cd ..
+Michaels-MacBook-Pro:WebFundamentals michaelobrien$ cd ..
+Michaels-MacBook-Pro:DojoAssignments michaelobrien$ ls -R
+MEAN		Python		Ruby		WebFundamentals	iOS		netCore
+
+./MEAN:
+about.txt
+
+./Python:
+about.txt
+
+./Ruby:
+about.txt
+
+./WebFundamentals:
+CSS		Git		HTML		Javascript	about.txt
+
+./WebFundamentals/CSS:
+about.txt
+
+./WebFundamentals/Git:
+about.txt
+
+./WebFundamentals/HTML:
+about.txt		indentation.html
+
+./WebFundamentals/Javascript:
+about.txt
+
+./iOS:
+about.txt
+
+./netCore:
+about.txt
+Michaels-MacBook-Pro:DojoAssignments michaelobrien$

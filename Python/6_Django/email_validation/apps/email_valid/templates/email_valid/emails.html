@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Emails</title>
+    </head>
+    <body>
+        <p>The email address you entered ({{request.session.email}}) is a VALID email address! Thank you!</p>
+
+        <h2>Email Addresses Entered:</h2>
+        {% for address in emails %}
+            <ul>
+                <li>{{address.email}}</li>
+            </ul>
+        {% endfor %}
+    </body>
+</html>
