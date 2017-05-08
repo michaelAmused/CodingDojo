@@ -1,2 +1,70 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1>Welcome!</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Register</h2>
+      <form action="/register/" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <div class="form-group">
+          <label for="user[first_name]">First Name</label>
+          <input type="text" class="form-control" name="user[first_name]" value="">
+        </div>
+        <div class="form-group">
+          <label for="user[last_name]">Last Name</label>
+          <input type="text" class="form-control" name="user[last_name]" value="">
+        </div>
+        <div class="form-group">
+          <label for="user[email]">Email</label>
+          <input type="text" class="form-control" name="user[email]" value="">
+        </div>
+        <div class="form-group">
+          <label for="user[city]">City</label>
+          <input type="text" class="form-control" name="user[city]" value="" width="80">
+        </div>
+        <div class="form-group">
+          <label for="user[state]">State</label>
+          <select name="user[state]" id="sel" />
+            <script>
+            function fill() {
+              var obj = ({"Data":{"AL":"AL","AK":"AK","AZ":"AZ","AR":"AR","CA":"CA","CO":"CO","CT":"CT","DE":"DE","DC":"DC","FL":"FL","GA":"GA","HI":"HI","ID":"ID","IL":"IL","IN":"IN","IA":"IA","KS":"KS","KY":"KY","LA":"LA","ME":"ME","MA":"MA","MI":"MI","MN":"MN","MS":"MS","MO":"MO","MT":"MT","NE":"NE","NV":"NV","NH":"NH","NJ":"NJ","NM":"NM","NY":"NY","NC":"NC","ND":"ND","OH":"OH","OK":"OK","OR":"OR","PA":"PA","RI":"RI","SC":"SC","SD":"SD","TN":"TN","TX":"TX","UT":"UT","VT":"VT","VA":"VA","WA":"WA","WV":"WV","WI":"WI","WY":"WY"}});
+              var s = document.getElementById('sel');
+              var i = 0;
+              for (var propertyName in obj.Data){
+                sel.options[i++] = new Option(propertyName, obj.Data[propertyName], true, false);
+              }
+            }
+            fill();
+            </script>
+        </div>
+        <div class="form-group">
+          <label for="user[password]">Password</label>
+          <input type="password" class="form-control" name="user[password]" value="">
+        </div>
+        <div class="form-group">
+          <label for="user[password_confirmation]">Password Confirmation</label>
+          <input type="password" class="form-control" name="user[password_confirmation]" value="">
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+    </div>
+    <div class="col-md-6">
+      <h2>Login</h2>
+      <form action="/login/" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" name="email">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" name="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+

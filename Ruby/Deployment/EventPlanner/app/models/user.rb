@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
 
-  has_many :events, dependant: :destroy
+  has_many :events
 
   has_many :guest_lists, dependent: :destroy
   has_many :functions, through: :guest_lists, source: :event
