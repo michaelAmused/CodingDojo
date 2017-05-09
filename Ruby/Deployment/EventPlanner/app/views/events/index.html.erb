@@ -31,11 +31,12 @@
                     <input type="submit" value="Delete">
                   </form></td>
                 <% else %>
-                    <%if @guest_list %>
+                    <%if @guest_list %>-->
                       <td><p>Joining</p></td>
                     <% else %>
                       <td>
                         <form action="/events/guest_lists/<%= event.id %>" method="post">
+                          <input type="hidden" name="_method" value="patch">
                           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                           <input type="hidden" name="user_id" value="<%= @user.id %>">
                           <input type="submit" name="" value="Join">
@@ -79,7 +80,18 @@
                   <input type="submit" value="Delete">
                 </form></td>
               <% else %>
-                <td><a href="/events/<%= event.id %>/edit">Join</a></td>
+                <%if @guest_list %>
+                      <td><p>Joining</p></td>
+                    <% else %>
+                      <td>
+                        <form action="/guest_lists/<%= event.id %>" method="post">
+                          <!--<input type="hidden" name="_method" value="patch">-->
+                          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                          <input type="hidden" name="user_id" value="<%= @user.id %>">
+                          <input type="submit" name="" value="Join">
+                        </form>
+                      </td>
+                    <% end %>
               <% end %>
             </tr>
             <% end %>
