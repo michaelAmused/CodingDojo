@@ -31,18 +31,21 @@
                     <input type="submit" value="Delete">
                   </form></td>
                 <% else %>
-                    <%if @guest_list %>-->
-                      <td><p>Joining</p></td>
-                    <% else %>
+                  <%= @guests.each do |e| %>
+                    <%if e.event_id != event.id %>
                       <td>
-                        <form action="/events/guest_lists/<%= event.id %>" method="post">
+                        <form action="/guest_lists" method="post">
                           <input type="hidden" name="_method" value="patch">
                           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                          <input type="hidden" name="user_id" value="<%= @user.id %>">
+                          <input type="hidden" name="guest_list[user_id]" value="<%= @user.id %>">
+                          <input type="hidden" name="guest_list[event_id]" value="<%= event.id %>">
                           <input type="submit" name="" value="Join">
                         </form>
                       </td>
+                    <% else %>
+                      <td><p>Joining</p></td>
                     <% end %>
+                  <% end %>
                 <% end %>
               </tr>
             <% end %>
@@ -80,19 +83,22 @@
                   <input type="submit" value="Delete">
                 </form></td>
               <% else %>
-                <%if @guest_list %>
-                      <td><p>Joining</p></td>
-                    <% else %>
+                  <%= @guests.each do |e| %>
+                    <%if e.event_id != event.id %>
                       <td>
-                        <form action="/guest_lists/<%= event.id %>" method="post">
-                          <!--<input type="hidden" name="_method" value="patch">-->
+                        <form action="/guest_lists" method="post">
+                          <input type="hidden" name="_method" value="patch">
                           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                          <input type="hidden" name="user_id" value="<%= @user.id %>">
+                          <input type="hidden" name="guest_list[user_id]" value="<%= @user.id %>">
+                          <input type="hidden" name="guest_list[event_id]" value="<%= event.id %>">
                           <input type="submit" name="" value="Join">
                         </form>
                       </td>
+                    <% else %>
+                      <td><p>Joining</p></td>
                     <% end %>
-              <% end %>
+                  <% end %>
+                <% end %>
             </tr>
             <% end %>
           <% end %>
@@ -132,7 +138,7 @@
           fill();
           </script>
         </div>
-        <button type="submit" class="btn btn-primary">Add Event</button>
+        <input type="submit" value="Add Event">
       </form>
     </div>
   </div>

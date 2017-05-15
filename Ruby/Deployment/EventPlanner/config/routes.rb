@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/logout/' => 'users#logout'
   get '/events' => 'events#index'
   post '/events' => 'events#create'
-  post '/guest_lists/:id' => 'guest_lists#create'
+  post '/guest_lists' => 'guest_lists#create'
   get '/events/:id' => 'events#show'
   get '/events/:id/edit' => 'events#edit'
   patch '/events/:id' => 'events#update'

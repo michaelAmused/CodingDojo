@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   def index
     @user = User.find(session[:user_id])
     @events = Event.all
+    @guests = GuestList.find_by_user_id(session[:user_id])
   end
 
   def new
@@ -19,6 +20,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @guests = Event.find(params[:id]).guests
   end
 
   def edit

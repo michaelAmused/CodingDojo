@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
-      redirect_to events_path user
+      redirect_to events_path
     else
       flash[:errors] = user.errors.full_messages
       redirect_to root_path
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to events_path user
+      redirect_to events_path
     else
       flash[:errors] = ["Invalid Combination"]
       redirect_to root_path

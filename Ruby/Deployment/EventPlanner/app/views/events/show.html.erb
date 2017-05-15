@@ -18,8 +18,8 @@
           <th>State</th>
         </thead>
         <tbody>
-          <% if @joiners %>
-            <% @joiners.each do |u| %>
+          <% if @guests %>
+            <% @guests.each do |u| %>
             <tr>
               <td><%= u.first_name %> <%= u.last_name %></td>
               <td><%= u.city%></td>
