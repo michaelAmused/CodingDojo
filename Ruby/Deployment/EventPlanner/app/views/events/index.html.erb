@@ -83,8 +83,9 @@
                   <input type="submit" value="Delete">
                 </form></td>
               <% else %>
+                <% if @guests %>
                   <%= @guests.each do |e| %>
-                    <%if e.event_id != event.id %>
+                    <% if e.event_id != event.id %>
                       <td>
                         <form action="/guest_lists" method="post">
                           <input type="hidden" name="_method" value="patch">
@@ -97,6 +98,7 @@
                     <% else %>
                       <td><p>Joining</p></td>
                     <% end %>
+                  <% end %>
                   <% end %>
                 <% end %>
             </tr>
